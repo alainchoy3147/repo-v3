@@ -1,0 +1,16 @@
+    /* Lo que Bootstrap no trae */
+    body {
+      min-height: 100vh;
+      background: url("/assets/img/fondo-bb.png") center / cover no-repeat fixed;
+    }
+
+    .login-box {
+      max-width: 485px;
+      margin-top: 80px;
+      background-color: rgba(251, 251, 251, 0.9);
+    }
+
+    .bg-opacity-90{
+        background-color: rgba(251, 251, 251, 0.9) !important;
+
+    }

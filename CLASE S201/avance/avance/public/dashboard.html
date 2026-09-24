@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina de Cuyo</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Fondo naranja del navbar */
+    .navbar-naranja {
+      background-color: #E84816;
+    }
+
+    /* Letras negras en los links */
+    .navbar-naranja .nav-link,
+    .navbar-naranja .navbar-brand {
+      color: #000;
+    }
+
+    .navbar-naranja .nav-link:hover,
+    .navbar-naranja .nav-link.active {
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-naranja" data-bs-theme="light">
+    <div class="container-fluid">
+
+      <!-- Logo a la izquierda -->
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/ulimaLogo.png" alt="Logo" height="40">
+      </a>
+
+      <!-- Botón hamburguesa (para pantallas pequeñas) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+
+        <!-- 4 nav items -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calendario</a>
+          </li>
+
+          <!-- El último con dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Más opciones
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Notas</a></li>
+              <li><a class="dropdown-item" href="#">Mensajes</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Ayuda</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- 2 botones a la derecha -->
+        <div class="d-flex gap-2">
+          <a href="#" class="btn btn-outline-dark">Editar perfil</a>
+          <a href="#" class="btn btn-dark">Cerrar sesión</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap 5 JS (necesario para el dropdown y el menú hamburguesa) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

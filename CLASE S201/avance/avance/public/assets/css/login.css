@@ -1,0 +1,51 @@
+body {
+
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("/assets/img/fondo-bb.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.form {
+    width: 385px; 
+    background-color: rgb(251, 251, 251, 0.9); 
+    margin: 0 auto; 
+    margin-top: 80px;
+    
+    padding: 50px;
+    padding-top: 40px;
+
+}
+
+.center {
+    text-align: center;
+}
+
+.input{
+    border: #343434 1px solid;
+    border-radius: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255, 0);
+}
+
+.btn{
+    background-color: #121314;
+    width: 100%;
+    padding: 10px;
+    color: white;
+
+}
+
+.p-10{
+    padding: 10px;
+}
+
+.fondo-gris{
+    background-color: #343434;
+}
