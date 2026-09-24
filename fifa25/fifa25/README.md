@@ -1,7 +1,8 @@
 # Plantilla del Curso de Programación Web 
 
 2026-2
-
+WOJOJOW
+clanero basado
 ---
 
 ## Descripción del Proyecto
