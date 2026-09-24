@@ -28,7 +28,7 @@ La aplicación utiliza Supabase como base de datos y dispone de migraciones SQL 
 
 Descargar GIT del [enlace](https://git-scm.com/install/windows)
 
-![Sitio web de descarga](./docs/gitwindows.png)
+![Sitio web de descarga](./docs/raze.jpg)
 
 Crear proyecto GIT
 
