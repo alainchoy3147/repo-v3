@@ -1,8 +1,7 @@
 # Plantilla del Curso de Programación Web 
 
 2026-2
-WOJOJOW
-clanero basado
+
 ---
 
 ## Descripción del Proyecto
@@ -24,6 +23,43 @@ La aplicación utiliza Supabase como base de datos y dispone de migraciones SQL 
 | `website/` | Lógica del sitio web: APIs, controladores, modelos, repositorios, rutas y servicios. |
 | `server.js` | Archivo principal para iniciar y configurar el servidor Express. |
 
+
+## Comandos GIT
+
+Descargar GIT del [enlace](https://git-scm.com/install/windows)
+
+![Sitio web de descarga](./docs/gitwindows.png)
+
+Crear proyecto GIT
+
+    > git init
+    
+Loguearse
+
+    > git config --global user.name "Tu Nombre"
+    > git config --global user.email "tu@email.com"
+
+Crear rama
+
+    > git checkout -b feature/prueba
+
+Ver ramas
+
+    > git branch
+
+Cambiar rama
+
+    > git checkout #nombre_rama
+
+Cambiar a commit
+
+    > git reset --hard #commit
+
+Cambiar remote
+
+    > git remote set-url origin git@github.com:usuario/repositorio.git
+
+    git remote set-url origin git@github.com:jovaldiv-ops/pw-2026-2.git
 
 Instalar dependencias:
 
