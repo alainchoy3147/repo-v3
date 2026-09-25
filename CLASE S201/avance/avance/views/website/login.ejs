@@ -1,8 +1,20 @@
 <% layout("layouts/access") %>
-    BIENVENIDOS
+    
     <br>
+    <div class="alerta-roja d-none" role="alert" id="alertMessage">
+        Contrasena Incorrecta
+    </div>
+    <div class="alerta-warning d-none" role="alert" id="warningMessage">
+         Llena los Datos
+    </div>
 
+    <div class="alerta-pass d-none" role="alert" id="loginMessage">
+        ¡Inicio de sesión exitoso!
+    </div>
+    
     <!-- INPUTS USUARIO Y PASSWORD -->
+    
+
     <label for="txtUser">Usuario</label>
     <br>
     <input class="input" type="text" name="user" id="txtUser" placeholder="Ingrese su Usuario">
@@ -39,8 +51,54 @@
     <script>
         function ingresar(){
             let username = document.getElementById("txtUser").value;
-            console.log(username)
             let password = document.getElementById("txtPassword").value;
-            console.log(password)
+            
+            if(password == "" || username == ""){
+                let warningtMessage = document.getElementById("warningMessage")
+                warningMessage.classList.remove("d-none")
+                console.log(username)
+                console.log(password)
+                warningMessage.innerHTML = "PUTO"
+            }else if(password == "123" || username == "admin"){
+                let loginMessage = document.getElementById("loginMessage")
+                loginMessage.classList.remove("d-none")
+                console.log(username)
+                console.log(password)
+                loginMessage.innerHTML = "GGWP"
+
+                document.getElementById("txtPassword").disabled = true
+                document.getElementById("txtUser").disabled = true
+
+                setInterval(() => {
+                    window.location.href = "/home";
+                },  5000);
+                
+            }else{
+                let alertMessage = document.getElementById("alertMessage")
+                alertMessage.classList.remove("d-none")
+                console.log(username)
+                console.log(password)
+                alertMessage.innerHTML = "PUTO"
+            }
+
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+        let fondos = [
+
+            "/assets/img/background1.jpg",
+            "/assets/img/background2.jpg",
+            "/assets/img/fondo-bb.png"
+        ];
+
+        setInterval(() => {
+
+        let indice = Math.floor(Math.random() * 3);
+
+        document.body.style.backgroundImage = `url('${fondos[indice]}')`;
+
+        },  10000);
+
+    });
     </script>

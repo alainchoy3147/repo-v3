@@ -1,0 +1,261 @@
+<!-- views/website/empresas.ejs -->
+<% layout("layouts/website") %>
+
+<!-- =========================================================
+     ENCABEZADO
+========================================================= -->
+
+<section
+  class="text-white"
+  style="
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.25)
+      ),
+      url('/assets/img/slider-1.jpg')
+      center/cover;
+  ">
+
+  <div class="container py-5">
+
+    <div class="row py-4">
+
+      <div class="col-lg-7">
+
+        <span class="badge bg-success mb-3 px-3 py-2">
+          EMPRESAS
+        </span>
+
+        <h1 class="display-5 fw-bold mb-3">
+          Empresas que buscan
+          <span class="text-success">practicantes</span>
+        </h1>
+
+        <p class="lead text-light mb-0">
+          Conoce a las organizaciones que confían en el
+          talento universitario y revisa sus convocatorias.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BUSCADOR DE EMPRESAS
+========================================================= -->
+
+<section class="bg-light py-5">
+
+  <div class="container">
+
+    <div class="card border-0 shadow-sm mb-5">
+
+      <div class="card-body p-4">
+
+        <form
+          action="/empresas"
+          method="GET">
+
+          <div class="row g-3">
+
+            <div class="col-12 col-lg-6">
+
+              <label class="form-label fw-semibold">
+                Empresa
+              </label>
+
+              <div class="input-group">
+
+                <span class="input-group-text bg-white">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="search"
+                  placeholder="Buscar por nombre de empresa...">
+
+              </div>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+
+              <label class="form-label fw-semibold">
+                Sector
+              </label>
+
+              <select
+                name="sector"
+                class="form-select">
+
+                <option value="">Todos</option>
+                <option value="banca">Banca y finanzas</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="retail">Retail</option>
+                <option value="consultoria">Consultoría</option>
+                <option value="legal">Legal</option>
+                <option value="logistica">Logística</option>
+
+              </select>
+
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+
+              <button
+                type="submit"
+                class="btn btn-success w-100">
+
+                <i class="fa-solid fa-magnifying-glass me-2"></i>
+                Buscar
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <!-- LISTADO DE EMPRESAS -->
+    <%
+      const companyList = typeof companies !== 'undefined' ? companies : [
+        { nombre: 'Banco Andino', sector: 'Banca y finanzas', distrito: 'Santiago de Surco', ofertas: 12, icono: 'fa-building-columns', color: 'primary' },
+        { nombre: 'TechLima Startup', sector: 'Tecnología', distrito: 'Miraflores', ofertas: 8, icono: 'fa-microchip', color: 'success' },
+        { nombre: 'Retail Perú S.A.', sector: 'Retail', distrito: 'San Isidro', ofertas: 6, icono: 'fa-cart-shopping', color: 'warning' },
+        { nombre: 'Estudio Rivera & Asociados', sector: 'Legal', distrito: 'San Isidro', ofertas: 3, icono: 'fa-scale-balanced', color: 'danger' },
+        { nombre: 'Grupo Pacífico', sector: 'Consultoría', distrito: 'La Molina', ofertas: 5, icono: 'fa-handshake', color: 'info' },
+        { nombre: 'LogiPerú', sector: 'Logística', distrito: 'Cercado de Lima', ofertas: 4, icono: 'fa-truck', color: 'secondary' }
+      ]
+    %>
+
+    <div class="row g-4">
+
+      <% companyList.forEach(company => { %>
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body text-center p-4 d-flex flex-column">
+
+              <div
+                class="bg-<%= company.color %> bg-opacity-10
+                       text-<%= company.color %> rounded-circle
+                       d-inline-flex align-items-center
+                       justify-content-center mb-3 mx-auto"
+                style="width:80px;height:80px;">
+
+                <i class="fa-solid <%= company.icono %> fs-2"></i>
+
+              </div>
+
+              <h5 class="fw-bold mb-1">
+                <%= company.nombre %>
+              </h5>
+
+              <p class="text-muted mb-3">
+                <%= company.sector %>
+              </p>
+
+              <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+
+                <span class="badge bg-secondary bg-opacity-10 text-dark">
+                  <i class="fa-solid fa-location-dot me-1"></i>
+                  <%= company.distrito %>
+                </span>
+
+                <span class="badge bg-success">
+                  <%= company.ofertas %> ofertas
+                </span>
+
+              </div>
+
+              <a
+                href="/convocatorias"
+                class="btn btn-outline-success mt-auto">
+
+                Ver convocatorias
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <% }) %>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA EMPRESAS
+========================================================= -->
+
+<section class="py-5">
+
+  <div class="container">
+
+    <div
+      class="bg-dark rounded-4 p-5 text-white">
+
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-8">
+
+          <span class="badge bg-success mb-3">
+            ¿ERES UNA EMPRESA?
+          </span>
+
+          <h2 class="fw-bold">
+            Publica tus convocatorias en PrácticaLima
+          </h2>
+
+          <p class="text-secondary lead mb-0">
+            Llega a miles de estudiantes universitarios de Lima
+            y encuentra al practicante ideal para tu equipo.
+          </p>
+
+        </div>
+
+        <div class="col-lg-4 text-lg-end">
+
+          <a
+            href="/login"
+            class="btn btn-success btn-lg px-4">
+
+            <i class="fa-solid fa-bullhorn me-2"></i>
+            Publicar oferta
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

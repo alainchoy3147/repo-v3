@@ -1,0 +1,362 @@
+<!-- views/website/convocatorias.ejs -->
+<% layout("layouts/website") %>
+
+<!-- =========================================================
+     ENCABEZADO
+========================================================= -->
+
+<section
+  class="text-white"
+  style="
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.90),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.25)
+      ),
+      url('/assets/img/slider-2.jpg')
+      center/cover;
+  ">
+
+  <div class="container py-5">
+
+    <div class="row py-4">
+
+      <div class="col-lg-7">
+
+        <span class="badge bg-success mb-3 px-3 py-2">
+          OFERTAS LABORALES
+        </span>
+
+        <h1 class="display-5 fw-bold mb-3">
+          Convocatorias de
+          <span class="text-success">prácticas</span>
+        </h1>
+
+        <p class="lead text-light mb-0">
+          Explora las ofertas vigentes y postula a la que
+          mejor encaje con tu carrera y horario.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTENIDO
+========================================================= -->
+
+<section class="bg-light py-5">
+
+  <div class="container">
+
+    <div class="row g-4">
+
+
+      <!-- FILTROS -->
+      <div class="col-12 col-lg-3">
+
+        <div class="card border-0 shadow-sm">
+
+          <div class="card-body p-4">
+
+            <h5 class="fw-bold mb-3">
+              <i class="fa-solid fa-filter text-success me-2"></i>
+              Filtros
+            </h5>
+
+            <form
+              action="/convocatorias"
+              method="GET">
+
+              <div class="mb-3">
+
+                <label class="form-label fw-semibold">
+                  Palabra clave
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="search"
+                  placeholder="Ej. Analista">
+
+              </div>
+
+              <div class="mb-3">
+
+                <label class="form-label fw-semibold">
+                  Carrera
+                </label>
+
+                <select
+                  name="carrera"
+                  class="form-select">
+
+                  <option value="">Todas</option>
+                  <option value="ingenieria-sistemas">Ing. de Sistemas</option>
+                  <option value="ingenieria-industrial">Ing. Industrial</option>
+                  <option value="administracion">Administración</option>
+                  <option value="economia">Economía</option>
+                  <option value="contabilidad">Contabilidad</option>
+                  <option value="derecho">Derecho</option>
+                  <option value="comunicaciones">Comunicaciones</option>
+                  <option value="psicologia">Psicología</option>
+
+                </select>
+
+              </div>
+
+              <div class="mb-3">
+
+                <label class="form-label fw-semibold">
+                  Distrito
+                </label>
+
+                <select
+                  name="distrito"
+                  class="form-select">
+
+                  <option value="">Todos</option>
+                  <option value="miraflores">Miraflores</option>
+                  <option value="san-isidro">San Isidro</option>
+                  <option value="surco">Santiago de Surco</option>
+                  <option value="la-molina">La Molina</option>
+                  <option value="san-borja">San Borja</option>
+                  <option value="cercado">Cercado de Lima</option>
+
+                </select>
+
+              </div>
+
+              <div class="mb-3">
+
+                <label class="form-label fw-semibold d-block">
+                  Tipo de práctica
+                </label>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipo" id="tipoTodas" value="" checked>
+                  <label class="form-check-label" for="tipoTodas">Todas</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipo" id="tipoPre" value="preprofesional">
+                  <label class="form-check-label" for="tipoPre">Preprofesional</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="tipo" id="tipoPro" value="profesional">
+                  <label class="form-check-label" for="tipoPro">Profesional</label>
+                </div>
+
+              </div>
+
+              <div class="mb-4">
+
+                <label class="form-label fw-semibold d-block">
+                  Modalidad
+                </label>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="modalidad" id="modPresencial" value="presencial">
+                  <label class="form-check-label" for="modPresencial">Presencial</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="modalidad" id="modHibrido" value="hibrido">
+                  <label class="form-check-label" for="modHibrido">Híbrido</label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="modalidad" id="modRemoto" value="remoto">
+                  <label class="form-check-label" for="modRemoto">Remoto</label>
+                </div>
+
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-success w-100">
+
+                <i class="fa-solid fa-magnifying-glass me-2"></i>
+                Aplicar filtros
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- LISTADO -->
+      <div class="col-12 col-lg-9">
+
+        <%
+          const offerList = typeof offers !== 'undefined' ? offers : [
+            { puesto: 'Practicante de Marketing Digital', empresa: 'Retail Perú S.A.', distrito: 'San Isidro', modalidad: 'Híbrido', tipo: 'Preprofesional', subvencion: 'S/ 1,130', publicado: 'Hace 2 días', icono: 'fa-bullhorn' },
+            { puesto: 'Practicante de Desarrollo Web', empresa: 'TechLima Startup', distrito: 'Miraflores', modalidad: 'Remoto', tipo: 'Profesional', subvencion: 'S/ 1,500', publicado: 'Hace 1 día', icono: 'fa-code' },
+            { puesto: 'Practicante de Finanzas', empresa: 'Banco Andino', distrito: 'Santiago de Surco', modalidad: 'Presencial', tipo: 'Preprofesional', subvencion: 'S/ 1,200', publicado: 'Hace 3 días', icono: 'fa-chart-line' },
+            { puesto: 'Practicante Legal', empresa: 'Estudio Rivera & Asociados', distrito: 'San Isidro', modalidad: 'Presencial', tipo: 'Preprofesional', subvencion: 'S/ 1,130', publicado: 'Hace 5 días', icono: 'fa-scale-balanced' },
+            { puesto: 'Practicante de Recursos Humanos', empresa: 'Grupo Pacífico', distrito: 'La Molina', modalidad: 'Híbrido', tipo: 'Profesional', subvencion: 'S/ 1,400', publicado: 'Hace 1 semana', icono: 'fa-people-group' },
+            { puesto: 'Practicante de Operaciones', empresa: 'LogiPerú', distrito: 'Cercado de Lima', modalidad: 'Presencial', tipo: 'Preprofesional', subvencion: 'S/ 1,130', publicado: 'Hace 1 semana', icono: 'fa-truck' }
+          ]
+        %>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+
+          <p class="text-muted mb-0">
+            Mostrando
+            <span class="fw-bold text-dark"><%= offerList.length %></span>
+            ofertas
+          </p>
+
+          <select
+            class="form-select w-auto"
+            name="orden">
+
+            <option value="recientes">Más recientes</option>
+            <option value="subvencion">Mayor subvención</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="d-flex flex-column gap-3">
+
+          <% offerList.forEach(offer => { %>
+
+            <div class="card border-0 shadow-sm">
+
+              <div class="card-body p-4">
+
+                <div class="row g-3 align-items-center">
+
+                  <div class="col-12 col-md-8">
+
+                    <div class="d-flex align-items-center">
+
+                      <div
+                        class="bg-success bg-opacity-10 text-success rounded-3
+                               d-inline-flex align-items-center justify-content-center
+                               flex-shrink-0 me-3"
+                        style="width:56px;height:56px;">
+
+                        <i class="fa-solid <%= offer.icono %> fs-4"></i>
+
+                      </div>
+
+                      <div>
+
+                        <h5 class="fw-bold mb-1">
+                          <%= offer.puesto %>
+                        </h5>
+
+                        <p class="text-muted mb-2">
+                          <i class="fa-solid fa-building me-1"></i>
+                          <%= offer.empresa %>
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2">
+
+                          <span class="badge bg-secondary bg-opacity-10 text-dark">
+                            <i class="fa-solid fa-location-dot me-1"></i>
+                            <%= offer.distrito %>
+                          </span>
+
+                          <span class="badge bg-secondary bg-opacity-10 text-dark">
+                            <i class="fa-solid fa-laptop-house me-1"></i>
+                            <%= offer.modalidad %>
+                          </span>
+
+                          <span class="badge bg-success">
+                            <%= offer.tipo %>
+                          </span>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="col-12 col-md-4 text-md-end">
+
+                    <p class="fw-bold text-success fs-5 mb-0">
+                      <%= offer.subvencion %>
+                    </p>
+
+                    <small class="text-muted d-block mb-2">
+                      <%= offer.publicado %>
+                    </small>
+
+                    <a
+                      href="/login"
+                      class="btn btn-success">
+
+                      Postular
+
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          <% }) %>
+
+        </div>
+
+
+        <!-- Paginación -->
+        <nav class="mt-4" aria-label="Paginación de ofertas">
+
+          <ul class="pagination justify-content-center mb-0">
+
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Anterior</a>
+            </li>
+
+            <li class="page-item active">
+              <a class="page-link bg-success border-success" href="#">1</a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link text-success" href="#">2</a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link text-success" href="#">3</a>
+            </li>
+
+            <li class="page-item">
+              <a class="page-link text-success" href="#">Siguiente</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

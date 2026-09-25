@@ -9,20 +9,45 @@ export function home(req, res) {
 }
 
 export function login(req, res) {
+  let fondos = [
+    "/assets/img/background1.jpg",
+    "/assets/img/background2.jpg",
+    "/assets/img/fondo-bb.png",
+  ];
   return res.render('website/login', {
+
     title: 'BIENVENIDO PUTO',
-    currentPage: 'home',
-    description:
-      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    background: fondos[Math.floor(Math.random() * 3)]
+  });
+}
+
+export function convocatorias(req, res) {
+  return res.render('website/convocatorias', {
+    title: 'Convocatorias',
+  });
+}
+
+export function empresas(req, res) {
+  return res.render('website/convocatorias', {
+    title: 'Empresas',
+  });
+}
+
+export function informacion(req, res) {
+  return res.render('website/informacion', {
+    title: 'Informacion',
   });
 }
 
 export function resetPassword(req, res) {
+  let fondos = [
+    "/assets/img/background1.jpg",
+    "/assets/img/background2.jpg",
+    "/assets/img/fondo-bb.png",
+  ];
   return res.render('website/reset-password', {
     title: 'PASSWORD AHI',
-    currentPage: 'home',
-    description:
-      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    background: fondos[Math.floor(Math.random() * 3)]
   });
 }
 

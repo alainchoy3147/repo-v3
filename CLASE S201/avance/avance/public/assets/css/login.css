@@ -3,7 +3,6 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    background-image: url("/assets/img/fondo-bb.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,4 +47,35 @@ body {
 
 .fondo-gris{
     background-color: #343434;
+}
+
+.alerta-roja {
+  background-color: #fde8ea;   /* rojo muy claro */
+  color: #842029;              /* texto rojo oscuro */
+  border: 1px solid #f5c2c7;   /* borde rojo suave */
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.alerta-warning {
+  background-color: #fff8e1;   /* amarillo muy claro */
+  color: #664d03;              /* texto amarillo oscuro */
+  border: 1px solid #ffe69c;   /* borde amarillo suave */
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.alerta-pass {
+  background-color: #e8f5ec;   /* verde muy claro */
+  color: #0f5132;              /* texto verde oscuro */
+  border: 1px solid #badbcc;   /* borde verde suave */
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
 }

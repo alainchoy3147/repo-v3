@@ -62,42 +62,43 @@
             class="container d-flex align-items-center"
             style="min-height: 600px;">
 
-            <div class="row">
+            <div class="row w-100">
 
               <div class="col-lg-7">
 
                 <span class="badge bg-success mb-3 px-3 py-2">
-                  FIFA / EA FC PLAYER DATABASE
+                  BOLSA DE PRÁCTICAS UNIVERSITARIAS
                 </span>
 
                 <h1 class="display-3 fw-bold mb-4">
-                  Descubre el mundo de
+                  Tu primera experiencia empieza en
                   <span class="text-success">
-                    PlayerStats
+                    PrácticaLima
                   </span>
                 </h1>
 
                 <p class="lead text-light mb-4">
-                  Explora una completa base de datos de jugadores,
-                  equipos, ligas, posiciones y estadísticas.
+                  Encuentra prácticas preprofesionales y profesionales
+                  en las mejores empresas de Lima, pensadas para
+                  estudiantes universitarios como tú.
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
 
                   <a
-                    href="/players"
+                    href="/convocatorias"
                     class="btn btn-success btn-lg px-4">
 
-                    <i class="bi bi-people me-2"></i>
-                    Explorar jugadores
+                    <i class="fa-solid fa-briefcase me-2"></i>
+                    Ver ofertas
 
                   </a>
 
                   <a
-                    href="#about"
+                    href="/informacion"
                     class="btn btn-outline-light btn-lg px-4">
 
-                    Conocer más
+                    Cómo funciona
 
                   </a>
 
@@ -141,26 +142,27 @@
               <div class="col-lg-7">
 
                 <span class="badge bg-success mb-3 px-3 py-2">
-                  PLAYER STATISTICS
+                  EMPRESAS VERIFICADAS
                 </span>
 
                 <h2 class="display-4 fw-bold mb-4">
-                  Analiza cada
+                  Postula a empresas
                   <span class="text-success">
-                    estadística
+                    que te buscan
                   </span>
                 </h2>
 
                 <p class="lead mb-4">
-                  Consulta velocidad, tiro, pase, regate,
-                  defensa, físico y valoración general.
+                  Bancos, consultoras, startups y más publican
+                  sus convocatorias para practicantes cada semana.
                 </p>
 
                 <a
-                  href="/players"
+                  href="/empresas"
                   class="btn btn-success btn-lg px-4">
 
-                  Ver estadísticas
+                  <i class="fa-solid fa-building me-2"></i>
+                  Ver empresas
 
                 </a>
 
@@ -202,27 +204,27 @@
               <div class="col-lg-7">
 
                 <span class="badge bg-success mb-3 px-3 py-2">
-                  SMART FILTERS
+                  POSTULA EN MINUTOS
                 </span>
 
                 <h2 class="display-4 fw-bold mb-4">
-                  Encuentra al jugador
+                  Crea tu perfil y
                   <span class="text-success">
-                    perfecto
+                    postula gratis
                   </span>
                 </h2>
 
                 <p class="lead mb-4">
-                  Filtra jugadores por posición, nación,
-                  liga, equipo, pie y estilo de juego.
+                  Sube tu CV una sola vez y postula a todas
+                  las ofertas con un solo clic.
                 </p>
 
                 <a
-                  href="/players"
+                  href="/login"
                   class="btn btn-success btn-lg px-4">
 
-                  <i class="bi bi-search me-2"></i>
-                  Buscar jugadores
+                  <i class="fa-solid fa-user-plus me-2"></i>
+                  Crear cuenta
 
                 </a>
 
@@ -284,16 +286,15 @@
     <div class="text-center mb-4">
 
       <span class="text-success fw-bold text-uppercase">
-        Explora la base de datos
+        Busca tu práctica
       </span>
 
       <h2 class="fw-bold mt-2">
-        Encuentra tu jugador
+        Encuentra la oferta ideal para ti
       </h2>
 
       <p class="text-muted">
-        Utiliza los filtros para encontrar exactamente
-        el jugador que estás buscando.
+        Filtra por puesto, carrera, distrito y modalidad.
       </p>
 
     </div>
@@ -304,149 +305,100 @@
       <div class="card-body p-4">
 
         <form
-          action="/players"
+          action="/convocatorias"
           method="GET">
 
           <div class="row g-3">
 
-            <!-- Nombre -->
+            <!-- Puesto -->
             <div class="col-12 col-lg-4">
 
               <label class="form-label fw-semibold">
-                Jugador
+                Puesto o palabra clave
               </label>
 
               <div class="input-group">
 
                 <span class="input-group-text bg-white">
-                  <i class="bi bi-search"></i>
+                  <i class="fa-solid fa-magnifying-glass"></i>
                 </span>
 
                 <input
                   type="text"
                   class="form-control"
                   name="search"
-                  placeholder="Ej. Messi, Mbappé, Haaland...">
+                  placeholder="Ej. Marketing, Analista, Desarrollador...">
 
               </div>
 
             </div>
 
 
-            <!-- Posición -->
+            <!-- Carrera -->
             <div class="col-12 col-md-4 col-lg-2">
 
               <label class="form-label fw-semibold">
-                Posición
+                Carrera
               </label>
 
               <select
-                name="position"
+                name="carrera"
                 class="form-select">
 
-                <option value="">
-                  Todas
-                </option>
-
-                <option value="GK">
-                  GK
-                </option>
-
-                <option value="CB">
-                  CB
-                </option>
-
-                <option value="CM">
-                  CM
-                </option>
-
-                <option value="CAM">
-                  CAM
-                </option>
-
-                <option value="LW">
-                  LW
-                </option>
-
-                <option value="RW">
-                  RW
-                </option>
-
-                <option value="ST">
-                  ST
-                </option>
+                <option value="">Todas</option>
+                <option value="ingenieria-sistemas">Ing. de Sistemas</option>
+                <option value="ingenieria-industrial">Ing. Industrial</option>
+                <option value="administracion">Administración</option>
+                <option value="economia">Economía</option>
+                <option value="contabilidad">Contabilidad</option>
+                <option value="derecho">Derecho</option>
+                <option value="comunicaciones">Comunicaciones</option>
+                <option value="psicologia">Psicología</option>
 
               </select>
 
             </div>
 
 
-            <!-- Nación -->
+            <!-- Distrito -->
             <div class="col-12 col-md-4 col-lg-2">
 
               <label class="form-label fw-semibold">
-                Nación
+                Distrito
               </label>
 
               <select
-                name="nation"
+                name="distrito"
                 class="form-select">
 
-                <option value="">
-                  Todas
-                </option>
-
-                <option value="Argentina">
-                  Argentina
-                </option>
-
-                <option value="Brazil">
-                  Brasil
-                </option>
-
-                <option value="France">
-                  Francia
-                </option>
-
-                <option value="Spain">
-                  España
-                </option>
+                <option value="">Todos</option>
+                <option value="miraflores">Miraflores</option>
+                <option value="san-isidro">San Isidro</option>
+                <option value="surco">Santiago de Surco</option>
+                <option value="la-molina">La Molina</option>
+                <option value="san-borja">San Borja</option>
+                <option value="cercado">Cercado de Lima</option>
 
               </select>
 
             </div>
 
 
-            <!-- Liga -->
+            <!-- Modalidad -->
             <div class="col-12 col-md-4 col-lg-2">
 
               <label class="form-label fw-semibold">
-                Liga
+                Modalidad
               </label>
 
               <select
-                name="league"
+                name="modalidad"
                 class="form-select">
 
-                <option value="">
-                  Todas
-                </option>
-
-                <option value="Premier League">
-                  Premier League
-                </option>
-
-                <option value="La Liga">
-                  La Liga
-                </option>
-
-                <option value="Serie A">
-                  Serie A
-                </option>
-
-                <option value="Bundesliga">
-                  Bundesliga
-                </option>
+                <option value="">Todas</option>
+                <option value="presencial">Presencial</option>
+                <option value="hibrido">Híbrido</option>
+                <option value="remoto">Remoto</option>
 
               </select>
 
@@ -460,7 +412,7 @@
                 type="submit"
                 class="btn btn-success w-100">
 
-                <i class="bi bi-search me-2"></i>
+                <i class="fa-solid fa-magnifying-glass me-2"></i>
                 Buscar
 
               </button>
@@ -491,11 +443,11 @@
     <div class="text-center mb-5">
 
       <span class="text-success fw-bold">
-        PLAYERSTATS
+        PRÁCTICALIMA EN NÚMEROS
       </span>
 
       <h2 class="fw-bold mt-2">
-        Nuestra base de datos
+        Una comunidad que crece cada día
       </h2>
 
     </div>
@@ -504,7 +456,7 @@
     <div class="row g-4">
 
 
-      <!-- Jugadores -->
+      <!-- Ofertas -->
       <div class="col-6 col-lg-3">
 
         <div class="card border-0 shadow-sm h-100">
@@ -518,16 +470,16 @@
                      justify-content-center mb-3"
               style="width:70px;height:70px;">
 
-              <i class="bi bi-people fs-2"></i>
+              <i class="fa-solid fa-briefcase fs-2"></i>
 
             </div>
 
             <h3 class="fw-bold mb-1">
-              <%= typeof playerCount !== 'undefined' ? playerCount : '12K+' %>
+              <%= typeof offerCount !== 'undefined' ? offerCount : '1.2K+' %>
             </h3>
 
             <p class="text-muted mb-0">
-              Jugadores
+              Ofertas activas
             </p>
 
           </div>
@@ -537,7 +489,7 @@
       </div>
 
 
-      <!-- Equipos -->
+      <!-- Empresas -->
       <div class="col-6 col-lg-3">
 
         <div class="card border-0 shadow-sm h-100">
@@ -551,16 +503,16 @@
                      justify-content-center mb-3"
               style="width:70px;height:70px;">
 
-              <i class="bi bi-shield fs-2"></i>
+              <i class="fa-solid fa-building fs-2"></i>
 
             </div>
 
             <h3 class="fw-bold mb-1">
-              <%= typeof teamCount !== 'undefined' ? teamCount : '500+' %>
+              <%= typeof companyCount !== 'undefined' ? companyCount : '350+' %>
             </h3>
 
             <p class="text-muted mb-0">
-              Equipos
+              Empresas
             </p>
 
           </div>
@@ -570,7 +522,7 @@
       </div>
 
 
-      <!-- Ligas -->
+      <!-- Estudiantes -->
       <div class="col-6 col-lg-3">
 
         <div class="card border-0 shadow-sm h-100">
@@ -584,16 +536,16 @@
                      justify-content-center mb-3"
               style="width:70px;height:70px;">
 
-              <i class="bi bi-trophy fs-2"></i>
+              <i class="fa-solid fa-user-graduate fs-2"></i>
 
             </div>
 
             <h3 class="fw-bold mb-1">
-              <%= typeof leagueCount !== 'undefined' ? leagueCount : '40+' %>
+              <%= typeof studentCount !== 'undefined' ? studentCount : '15K+' %>
             </h3>
 
             <p class="text-muted mb-0">
-              Ligas
+              Estudiantes
             </p>
 
           </div>
@@ -603,7 +555,7 @@
       </div>
 
 
-      <!-- Naciones -->
+      <!-- Universidades -->
       <div class="col-6 col-lg-3">
 
         <div class="card border-0 shadow-sm h-100">
@@ -617,16 +569,16 @@
                      justify-content-center mb-3"
               style="width:70px;height:70px;">
 
-              <i class="bi bi-globe-americas fs-2"></i>
+              <i class="fa-solid fa-building-columns fs-2"></i>
 
             </div>
 
             <h3 class="fw-bold mb-1">
-              <%= typeof nationCount !== 'undefined' ? nationCount : '200+' %>
+              <%= typeof universityCount !== 'undefined' ? universityCount : '30+' %>
             </h3>
 
             <p class="text-muted mb-0">
-              Naciones
+              Universidades
             </p>
 
           </div>
@@ -643,7 +595,125 @@
 
 
 <!-- =========================================================
-     SOBRE LA APLICACIÓN
+     OFERTAS DESTACADAS
+========================================================= -->
+
+<section class="bg-light py-5">
+
+  <div class="container">
+
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+
+      <div>
+
+        <span class="text-success fw-bold text-uppercase">
+          Recién publicadas
+        </span>
+
+        <h2 class="fw-bold mt-2 mb-0">
+          Ofertas destacadas
+        </h2>
+
+      </div>
+
+      <a
+        href="/convocatorias"
+        class="btn btn-outline-success">
+
+        Ver todas
+        <i class="fa-solid fa-arrow-right ms-1"></i>
+
+      </a>
+
+    </div>
+
+
+    <%
+      const featuredOffers = typeof offers !== 'undefined' ? offers : [
+        { puesto: 'Practicante de Marketing Digital', empresa: 'Retail Perú S.A.', distrito: 'San Isidro', modalidad: 'Híbrido', tipo: 'Preprofesional', icono: 'fa-bullhorn' },
+        { puesto: 'Practicante de Desarrollo Web', empresa: 'TechLima Startup', distrito: 'Miraflores', modalidad: 'Remoto', tipo: 'Profesional', icono: 'fa-code' },
+        { puesto: 'Practicante de Finanzas', empresa: 'Banco Andino', distrito: 'Santiago de Surco', modalidad: 'Presencial', tipo: 'Preprofesional', icono: 'fa-chart-line' }
+      ]
+    %>
+
+    <div class="row g-4">
+
+      <% featuredOffers.forEach(offer => { %>
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="card border-0 shadow-sm h-100">
+
+            <div class="card-body p-4 d-flex flex-column">
+
+              <div class="d-flex align-items-center mb-3">
+
+                <div
+                  class="bg-success bg-opacity-10 text-success rounded-3
+                         d-inline-flex align-items-center justify-content-center me-3"
+                  style="width:50px;height:50px;">
+
+                  <i class="fa-solid <%= offer.icono %> fs-4"></i>
+
+                </div>
+
+                <div>
+
+                  <h5 class="fw-bold mb-0">
+                    <%= offer.puesto %>
+                  </h5>
+
+                  <small class="text-muted">
+                    <%= offer.empresa %>
+                  </small>
+
+                </div>
+
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mb-4">
+
+                <span class="badge bg-secondary bg-opacity-10 text-dark">
+                  <i class="fa-solid fa-location-dot me-1"></i>
+                  <%= offer.distrito %>
+                </span>
+
+                <span class="badge bg-secondary bg-opacity-10 text-dark">
+                  <i class="fa-solid fa-laptop-house me-1"></i>
+                  <%= offer.modalidad %>
+                </span>
+
+                <span class="badge bg-success">
+                  <%= offer.tipo %>
+                </span>
+
+              </div>
+
+              <a
+                href="/convocatorias"
+                class="btn btn-success mt-auto">
+
+                Ver oferta
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      <% }) %>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SOBRE LA PLATAFORMA
 ========================================================= -->
 
 <section
@@ -657,31 +727,31 @@
       <div class="col-lg-6">
 
         <span class="badge bg-success mb-3">
-          SOBRE PLAYERSTATS
+          SOBRE PRÁCTICALIMA
         </span>
 
         <h2 class="display-6 fw-bold mb-4">
           Todo lo que necesitas
-          para explorar jugadores.
+          para conseguir tu práctica.
         </h2>
 
         <p class="text-secondary lead">
-          PlayerStats es una plataforma diseñada para
-          consultar y gestionar información relacionada
-          con jugadores de FIFA / EA FC.
+          PrácticaLima es una bolsa de trabajo creada para que
+          estudiantes universitarios encuentren prácticas en
+          empresas de Lima de forma rápida y segura.
         </p>
 
         <p class="text-secondary">
-          La información está organizada mediante jugadores,
-          equipos, ligas, naciones, posiciones, pies y
-          estilos de juego.
+          Las ofertas están organizadas por carrera, distrito,
+          modalidad y tipo de práctica, para que solo veas
+          lo que de verdad te interesa.
         </p>
 
         <a
-          href="/players"
+          href="/informacion"
           class="btn btn-success mt-3">
 
-          Explorar base de datos
+          Cómo funciona
 
         </a>
 
@@ -699,16 +769,16 @@
 
               <div class="card-body p-4">
 
-                <i class="bi bi-bar-chart-fill
+                <i class="fa-solid fa-shield-halved
                           text-success fs-1"></i>
 
-                <h5 class="mt-3">
-                  Estadísticas
+                <h5 class="mt-3 text-white">
+                  Empresas verificadas
                 </h5>
 
                 <p class="text-secondary small mb-0">
-                  Consulta las principales estadísticas
-                  de cada jugador.
+                  Revisamos cada empresa antes de
+                  publicar sus ofertas.
                 </p>
 
               </div>
@@ -725,16 +795,16 @@
 
               <div class="card-body p-4">
 
-                <i class="bi bi-funnel-fill
+                <i class="fa-solid fa-filter
                           text-success fs-1"></i>
 
-                <h5 class="mt-3">
+                <h5 class="mt-3 text-white">
                   Filtros
                 </h5>
 
                 <p class="text-secondary small mb-0">
-                  Encuentra jugadores utilizando
-                  múltiples filtros.
+                  Busca por carrera, distrito
+                  y modalidad.
                 </p>
 
               </div>
@@ -751,15 +821,16 @@
 
               <div class="card-body p-4">
 
-                <i class="bi bi-database-fill
+                <i class="fa-solid fa-file-lines
                           text-success fs-1"></i>
 
-                <h5 class="mt-3">
-                  Base de datos
+                <h5 class="mt-3 text-white">
+                  CV único
                 </h5>
 
                 <p class="text-secondary small mb-0">
-                  Información organizada y relacionada.
+                  Sube tu CV una vez y úsalo
+                  en todas tus postulaciones.
                 </p>
 
               </div>
@@ -776,16 +847,16 @@
 
               <div class="card-body p-4">
 
-                <i class="bi bi-lightning-fill
+                <i class="fa-solid fa-bell
                           text-success fs-1"></i>
 
-                <h5 class="mt-3">
-                  Rápido
+                <h5 class="mt-3 text-white">
+                  Alertas
                 </h5>
 
                 <p class="text-secondary small mb-0">
-                  Busca y encuentra jugadores
-                  rápidamente.
+                  Recibe avisos de nuevas
+                  ofertas para tu carrera.
                 </p>
 
               </div>
@@ -816,25 +887,36 @@
     <div
       class="bg-success rounded-4 p-5 text-center text-white">
 
-      <i class="bi bi-shield-fill-check fs-1"></i>
+      <i class="fa-solid fa-user-graduate fs-1"></i>
 
       <h2 class="fw-bold mt-3">
-        ¿Listo para explorar?
+        ¿Listo para tu primera práctica?
       </h2>
 
       <p class="lead mb-4">
-        Descubre jugadores, estadísticas,
-        equipos y mucho más.
+        Crea tu cuenta gratis y empieza a postular hoy mismo.
       </p>
 
-      <a
-        href="/players"
-        class="btn btn-light btn-lg px-5">
+      <div class="d-flex flex-wrap justify-content-center gap-2">
 
-        <i class="bi bi-search me-2"></i>
-        Explorar jugadores
+        <a
+          href="/login"
+          class="btn btn-light btn-lg px-5">
 
-      </a>
+          <i class="fa-solid fa-user-plus me-2"></i>
+          Crear cuenta
+
+        </a>
+
+        <a
+          href="/convocatorias"
+          class="btn btn-outline-light btn-lg px-5">
+
+          Ver ofertas
+
+        </a>
+
+      </div>
 
     </div>
 

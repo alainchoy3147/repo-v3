@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS del Admin o de React -->
+  <link rel="stylesheet" href="/dist/css/index.css">
+  <link rel="stylesheet" href="/dist/css/admin.css">
+
+  <title><%= title %></title>
+</head>
+<body>
+
+  <!-- NAVBAR DE MANTENIMIENTO -->
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="/admin">Panel Admin</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuAdmin">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuAdmin">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link <%= locals.currentPage === 'semesters' ? 'active' : '' %>" href="/admin/semesters">Semestres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= locals.currentPage === 'districts' ? 'active' : '' %>" href="/admin/districts">Distritos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= locals.currentPage === 'careers' ? 'active' : '' %>" href="/admin/carrers">Carreras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= locals.currentPage === 'modalities' ? 'active' : '' %>" href="/admin/modalities">Modalidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <%= locals.currentPage === 'skills' ? 'active' : '' %>" href="/admin/skills">Skills</a>
+          </li>
+        </ul>
+
+        <a href="/sign-out" class="btn btn-outline-light">Cerrar sesión</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Renderizado del cuerpo de EJS -->
+  <%- body %>
+
+  <!-- JavaScript principal que arranca React -->
+  <script type="module" src="/dist/js/admin.js"></script>
+</body>
+</html>
